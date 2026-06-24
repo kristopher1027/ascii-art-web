@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <header>
+        ASCII-ART-WEB
+    </header>
+    <form action="/ascii-art" method="post">
+    <textarea name="text"></textarea>
+    <br>
+    <select name="banner">
+        <option>standard</option>
+        <option>shadow</option>
+        <option>thinkertoy</option>
+    </select>
+    <br>
+    <button type="submit">Generate</button></form>
+    </form>
+    <br>
+
+    <!-- <form action="/ascii-switch" method="post">
+    <a href="/ascii-switch?text={{.Text}}&banner=standard">standard</a>
+    <a href="/ascii-switch?text={{.Text}}&banner=shadow">shadow</a>
+    <a href="/ascii-switch?text={{.Text}}&banner=thinkertoy">thinkertoy</a>
+    </form> -->
+
+    <hr>
+    <hr>
+    <pre>
+        {{.Result}}
+    </pre> 
+    
+</body>
+</html>
