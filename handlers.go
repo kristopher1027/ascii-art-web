@@ -32,6 +32,14 @@ func asciiHandler(w http.ResponseWriter, r *http.Request) {
 
 	text := r.FormValue("text")
 	banner := r.FormValue("banner")
+	if text == "" {
+		http.Error(w, "400 Bad Request", http.StatusBadRequest)
+		return
+	}
+	if banner == "" {
+		http.Error(w, "400 Bad Request", http.StatusNotFound)
+		return
+	}
 
 	result := GenerateArt(text, banner)
 	data := PageData{
