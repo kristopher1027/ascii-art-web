@@ -57,6 +57,10 @@ func switchHandler(w http.ResponseWriter, r *http.Request) {
 	if banner == "" {
 		banner = r.FormValue("banner")
 	}
+	if text == "" {
+		http.Error(w, "400 Bad Request", http.StatusBadRequest)
+		return
+	}
 
 	result := GenerateArt(text, banner)
 
